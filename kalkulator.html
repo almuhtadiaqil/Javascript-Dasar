@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+</head>
+<body>
+    <style>
+        input{
+            width: 404px;
+            height: 100px;
+        }
+        button{
+            background: transparent;
+            border: 1;
+            padding: 20px;
+            width: 100px;
+            height: 100px;
+        
+        }
+        .clear{
+            width: 204px;
+        }
+        table{
+            margin: auto;
+        }
+        th, td {
+            background-color: white;
+        }
+        
+    </style>
+    <table>
+        <tr>
+            <th colspan="4"><input type="text" id="displayNumber"></th>
+        </tr>
+        <tr>
+            <td colspan="2"><button type="button" class="clear" onclick="clear_semua()">Clear</button></td>
+            <td><button type="button" onclick="aksi('*')">*</button></td>
+            <td><button type="button" onclick="aksi('/')">/</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="angka('7')">7</button></td>
+            <td><button type="button" onclick="angka('8')">8</button></td>
+            <td><button type="button" onclick="angka('9')">9</button></td>
+            <td><button type="button" onclick="aksi('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="angka('4')">4</button></td>
+            <td><button type="button" onclick="angka('5')">5</button></td>
+            <td><button type="button" onclick="angka('6')">6</button></td>
+            <td><button type="button" onclick="aksi('+')">+</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="angka('1')">1</button></td>
+            <td><button type="button" onclick="angka('2')">2</button></td>
+            <td><button type="button" onclick="angka('3')">3</button></td>
+            <td><button type="button" onclick="result()">=</button></td>
+        </tr>
+    </table>
+    
+    <script>
+        var hasil = "";
+        var input1 = "";
+        var input2 = "";
+        var operator = "";
+
+        function angka (num){
+            input2 = input2 + num;
+            document.getElementById('displayNumber').setAttribute('value', input2);
+        }
+        function clear_semua(){
+            hasil = input1 = input2 = operator = "";
+            value = "";
+            document.getElementById('displayNumber').setAttribute('value', value);
+        }
+        function aksi(num){
+            operator = num;
+            input1 = input2;
+            input2 ="";
+            value = "";
+            document.getElementById('displayNumber').setAttribute('value', value);
+        }
+        function result(){
+            switch(operator){
+                case '+':
+                    hasil = parseInt(input1) + parseInt(input2);
+                    value = hasil;
+                    document.getElementById('displayNumber').setAttribute('value', value);
+                    break;
+                case '-':
+                    hasil = input1 - input2;
+                    value = hasil;
+                    document.getElementById('displayNumber').setAttribute('value', value);
+                    break;
+                case '*':
+                    hasil = input1 * input2;
+                    value = hasil;
+                    document.getElementById('displayNumber').setAttribute('value', value);
+                    break;
+                case '/':
+                    hasil = input1 / input2;
+                    value = hasil;
+                    document.getElementById('displayNumber').setAttribute('value', value);
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

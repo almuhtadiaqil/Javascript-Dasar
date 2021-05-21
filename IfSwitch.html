@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If & Switch</title>
+</head>
+<body>
+    <script>
+        let dollar = 500;
+        if (dollar > 1000){
+            console.log('Beli Motor');
+        }
+        else if(dollar >10000){
+            console.log('Beli Mobil');
+        }
+        else{
+            console.log('diem aja');
+        }
+        let vegan = "y"; // Y/N
+        switch(vegan){
+            case ['Y', 'y']:
+                console.log('jangan minum susu');
+                break;
+            case "N" :
+                console.log('boleh minum susu');
+                break;
+            default:
+                console.log('Labil');
+        }
+    </script>
+    
+</body>
+</html>
